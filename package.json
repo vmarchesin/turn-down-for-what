@@ -1,0 +1,34 @@
+{
+  "name": "turn-down-for-what",
+  "version": "1.0.0",
+  "description": "Fire up that loud, Another round of shots",
+  "main": "dist/TurnDownForWhat.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmarchesin/turn-down-for-what.git"
+  },
+  "keywords": [
+    "turn-down-for-what",
+    "lil-john",
+    "animation",
+    "css-animation",
+    "css",
+    "youtube-iframe",
+    "youtube"
+  ],
+  "author": "Vinicius Marchesin Araujo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmarchesin/turn-down-for-what/issues"
+  },
+  "homepage": "https://github.com/vmarchesin/turn-down-for-what#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1"
+  }
+}
