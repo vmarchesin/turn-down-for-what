@@ -1,20 +1,19 @@
 module.exports = function() {
   let introKeyframes = [];
   let turntKeyframes = new Array(this.numTurntAnimations).fill('');
-  const jitterAmount = 10;
 
   for(let i = 0; i <= this.numKeyframes; i++) {
     const percentage = i / this.numKeyframes * 100 + '%';
 
-    const keyFrameX = ~~((Math.random() - 0.5) * jitterAmount) || 1;
-    const keyFrameY = ~~((Math.random() - 0.5) * jitterAmount) || 1;
+    const keyFrameX = ~~((Math.random() - 0.5) * this.jitterAmount) || 1;
+    const keyFrameY = ~~((Math.random() - 0.5) * this.jitterAmount) || 1;
     const keyframe = `-webkit-transform: translate(${keyFrameX}px, ${keyFrameY}px); transform: translate(${keyFrameX}px, ${keyFrameY}px);`;
 
     introKeyframes.push(`${percentage} { ${keyframe} }`);
 
     for(let j = 0; j < this.numTurntAnimations; j++) {
-      const turnAnimationX = ~~((Math.random() - 0.5) * jitterAmount) || 1;
-      const turnAnimationY = ~~((Math.random() - 0.5) * jitterAmount) || 1;
+      const turnAnimationX = ~~((Math.random() - 0.5) * this.jitterAmount) || 1;
+      const turnAnimationY = ~~((Math.random() - 0.5) * this.jitterAmount) || 1;
       const rotateAmount = ~~(i / this.numKeyframes * 360);
       const rotateDirection = String.fromCharCode(88 + ~~ (Math.random() * 2));
 

@@ -55,13 +55,17 @@ turnDownForWhat(affectedNodes, options);
 > ```
 
 * `options`: The second argument is an object that can configure some parameters:
-  * `noDelay [default: false]`: By default the animation creates a random delay for the intro, making it look that each node is joining the party one at a time. If you are animating a single node, or you just want to have them all jump at the same time, pass `true`  to disable the delay and avoid weird behaviours.
+  * `noDelay [default: false]`: By default the animation creates a random delay for the intro, making it look that each node is joining the party one at a time. If you are animating a single node, or you just want to have them all jump at the same time, pass `true` to disable the delay and avoid weird behaviours.
 
     > Example
     > ```js
     > // Everything will start the animation at the same time
     > turnDownForWhat(['*'], { noDelay: true });
     > ```
+
+  * `jitterAmount [default: 10]`: A modifier for the amount of jitter the animation will receive during the intro. Increase to be more "shaky", and decrease for a more "stable" animation.
+
+    <small>Values below 4 behave poorly, with little to no jitter.</small>
 
   * `numKeyframes [default: 10]`: By default 10 random keyframes are generated. You can define how many you want with this property.
 

@@ -6,20 +6,23 @@ const { onPlayerReady, onPlayerStateChange } = require('./onPlayer');
 const { addCurrStyles, getCurrClass, removeCurrStyles } = require ('./stylesHandler');
 
 function init(affectedNodes, {
+  jitterAmount,
   maxNodes,
   noDelay,
   numKeyframes,
   numTurntAnimations,
 }) {
-  this.turndownAt = 20;
-  this.turntDown = false;
   this.firstAddition = true;
   this.player = null;
-  this.noDelay = noDelay;
-  this.maxNodes = maxNodes;
-  this.numKeyframes = numKeyframes;
+  this.turndownAt = 20;
+  this.turntDown = false;
   this.affectedNodes = affectedNodes;
+  this.jitterAmount = jitterAmount;
+  this.maxNodes = maxNodes;
+  this.noDelay = noDelay;
+  this.numKeyframes = numKeyframes;
   this.numTurntAnimations = numTurntAnimations;
+
   this.animationCSS = {
     'tdfw_intro': 'tdfwIntro 1s infinite ease-in-out',
     'turntDown': () => `turntDown${~~(Math.random() * this.numTurntAnimations)} 5s infinite ease-in-out`,
@@ -43,13 +46,14 @@ function init(affectedNodes, {
 };
 
 const turnDownForWhat = (affectedNodes = ['*'], {
+  jitterAmount = 10,
   maxNodes = 1000,
   noDelay = false,
   numTurntAnimations = 10,
   numKeyframes = 10,
 }) => {
   animationFrameHelper();
-  init(affectedNodes, { maxNodes, noDelay, numKeyframes, numTurntAnimations });
+  init(affectedNodes, { jitterAmount, maxNodes, noDelay, numKeyframes, numTurntAnimations });
 }
 
 module.exports = turnDownForWhat;
