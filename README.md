@@ -35,15 +35,15 @@ const turnDownForWhat = require('turn-down-for-what');
 turnDownForWhat();
 ```
 
-## Options
+## Arguments
 
-The `turnDownForWhat` function takes 2 parameters.
+The `turnDownForWhat` function takes two arguments.
 
 ```js
 const affectedNodes = ['img', 'svg', 'p'];
-const noDelay = true;
+const options = { noDelay: true };
 
-turnDownForWhat(affectedNodes, noDelay);
+turnDownForWhat(affectedNodes, options);
 ```
 
 * `affectedNodes`: An array with the HTML tags that are supposed to be affected by the CSS animation. The code uses `document.querySelectorAll` to retrieve the nodes, so the syntax must be the same. The default is `['*']`, meaning all tags will be matched.
@@ -54,13 +54,29 @@ turnDownForWhat(affectedNodes, noDelay);
 > turnDownForWhat(['div.animate', 'p#banner']);
 > ```
 
-* `noDelay`: By default the animation creates a random delay for the intro, making it look that each node is joining the party one at a time. If you are animating a single node, or you just want to have them all jump at the same time, pass `true` as the second parameter to disable the delay and avoid weird behaviours.
+* `options`: The second argument is an object that can configure some parameters:
+  * `noDelay [default: false]`: By default the animation creates a random delay for the intro, making it look that each node is joining the party one at a time. If you are animating a single node, or you just want to have them all jump at the same time, pass `true`  to disable the delay and avoid weird behaviours.
 
-> Example
-> ```js
-> // Everything will start the animation at the same time
-> turnDownForWhat(['*'], true);
-> ```
+    > Example
+    > ```js
+    > // Everything will start the animation at the same time
+    > turnDownForWhat(['*'], { noDelay: true });
+    > ```
+
+  * `numKeyframes [default: 10]`: By default 10 random keyframes are generated. You can define how many you want with this property.
+
+  * `numTurntAnimations [default: 10]`: After the drop your page will **Turn Down For What**. Define how many animations (keyframes) you want for this part (does not affect the intro). The default is 10.
+
+    > Example
+    > ```js
+    > // Increase the number of animations
+    > turnDownForWhat(['*'], {
+    >   numKeyframes: 20,
+    >   numTurntAnimations: 20,
+    > });
+    > ```
+
+  * `maxNodes [default: 1000]`: For performance reasons only the first 1000 nodes will be animated. If you wish to override, pass another value.
 
 ## Live Example
 * <a href="https://vmarches.in" target="_blank">My personal webpage</a>
