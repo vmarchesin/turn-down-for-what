@@ -20,7 +20,11 @@ module.exports = function() {
 
       const turnKeyFrame = `-webkit-transform: translate(${turnAnimationX}px, ${turnAnimationY}px) rotate${rotateDirection}(${rotateAmount}deg); transform: translate(${turnAnimationX}px, ${turnAnimationY}px) rotate${rotateDirection}(${rotateAmount}deg);`;
 
-      turntKeyframes[j] += `${percentage} { ${turnKeyFrame} }`;
+      if (percentage === '100%') {
+        turntKeyframes[j] += `${percentage} { -webkit-transform: none; transform: none; }`;
+      } else {
+        turntKeyframes[j] += `${percentage} { ${turnKeyFrame} }`;
+      }
     }
   }
 

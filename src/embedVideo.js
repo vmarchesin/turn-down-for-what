@@ -6,7 +6,7 @@ module.exports = function() {
   parent.style.top = 0;
   parent.style.opacity = 0.2;
   const div = document.createElement('div');
-  div.id = "tdfw";
+  div.id = 'tdfw';
   parent.appendChild(div);
   document.body.appendChild(parent)
   parent.onmouseover = function() {
@@ -20,7 +20,7 @@ module.exports = function() {
 
   const tag = document.createElement('script');
 
-  tag.src = "https://www.youtube.com/iframe_api";
+  tag.src = 'https://www.youtube.com/iframe_api';
   document.body.appendChild(tag);
 
   // This function creates an <iframe> (and YouTube player) after the API code downloads.
