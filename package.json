@@ -1,6 +1,6 @@
 {
   "name": "turn-down-for-what",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Fire up that loud, Another round of shots",
   "main": "dist/TurnDownForWhat.js",
   "scripts": {

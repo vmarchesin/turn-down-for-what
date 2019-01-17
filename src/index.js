@@ -45,15 +45,24 @@ function init(affectedNodes, {
   })();
 };
 
-const turnDownForWhat = (affectedNodes = ['*'], {
-  jitterAmount = 10,
-  maxNodes = 1000,
-  noDelay = false,
-  numTurntAnimations = 10,
-  numKeyframes = 10,
+const turnDownForWhat = (affectedNodes = ['*'], options = {
+  jitterAmount: 10,
+  maxNodes: 1000,
+  noDelay: false,
+  numTurntAnimations: 10,
+  numKeyframes: 10,
 }) => {
   animationFrameHelper();
-  init(affectedNodes, { jitterAmount, maxNodes, noDelay, numKeyframes, numTurntAnimations });
+
+  const config = {
+    jitterAmount: options.jitterAmount || 10,
+    maxNodes: options.maxNodes || 1000,
+    noDelay: options.noDelay ||false,
+    numTurntAnimations: options.numTurntAnimations ||10,
+    numKeyframes: options.numKeyframes ||10,
+  }
+
+  init(affectedNodes, { ...config });
 }
 
 module.exports = turnDownForWhat;
