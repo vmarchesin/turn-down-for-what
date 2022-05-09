@@ -4,6 +4,7 @@
   "description": "Fire up that loud, Another round of shots",
   "main": "dist/TurnDownForWhat.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "webpack --mode production"
   },
   "repository": {
