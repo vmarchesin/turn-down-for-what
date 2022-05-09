@@ -20,6 +20,6 @@ module.exports = function () {
   }
 
   if (!window.cancelAnimationFrame) {
-    window.cancelAnimationFrame = (timeoutFunc) => clearTimeout(timeoutFunc);
+    window.cancelAnimationFrame = (timeoutId) => clearTimeout(timeoutId);
   }
 };

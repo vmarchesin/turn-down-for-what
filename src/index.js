@@ -52,14 +52,18 @@ const turnDownForWhat = (affectedNodes = ['*'], options = {
   numTurntAnimations: 10,
   numKeyframes: 10,
 }) => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
   animationFrameHelper();
 
   const config = {
     jitterAmount: options.jitterAmount || 10,
     maxNodes: options.maxNodes || 1000,
     noDelay: options.noDelay ||false,
-    numTurntAnimations: options.numTurntAnimations ||10,
-    numKeyframes: options.numKeyframes ||10,
+    numTurntAnimations: options.numTurntAnimations || 10,
+    numKeyframes: options.numKeyframes || 10,
   }
 
   init(affectedNodes, { ...config });
