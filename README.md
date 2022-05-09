@@ -82,13 +82,6 @@ turnDownForWhat(affectedNodes, options);
 
   * `maxNodes [default: 1000]`: For performance reasons only the first 1000 nodes will be animated. If you wish to override, pass another value.
 
-## Live Example
-* <a href="https://vmarches.in" target="_blank">My personal webpage</a>
-
-This example makes use of another one of my packages: <a href="https://github.com/vmarchesin/react-konami-code" target="_blank">React Konami Code</a>.
-
-To Turn Down For What on my website input the Konami Code using a keyboard: `↑ ↑ ↓ ↓ ← → ← → B A`
-
 ## License
 
 [MIT](https://github.com/vmarchesin/turn-down-for-what/blob/master/LICENSE)
